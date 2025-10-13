@@ -23,15 +23,16 @@
             <p>
                 Please display a hello world message in JavaScript. 
                 <script>
-                    document.title = "JavaScript Basic -- In class practice -- Yilian Zhang";
+                    document.title = "JavaScript Basic -- In class practice -- Zachary Griffin";
                     // use document.write to display a message
-                    
+                    document.write("Hello World!");
                     // use console.log to display a message   
-                  
+                    console.log("Print For Debug")
                     
                 </script>
             </p>
             <p> Please import external file hello.js here. 
+                <script src="js/hello.js"></script>
                 
             </p>
         </div>
@@ -40,14 +41,36 @@
             <h1> Variable and Arithemetic Operation</h1>
             <p> Practice on variables </p>
 
+            <script>
+                var a = 3
+                var b = 5
+                var c = a*b
+                var d = b - a
+                var e = c/d
+                var f = b%a
+
+                console.log(c);
+                console.log(d);
+                console.log(e);
+                console.log(f);
+            </script>
+
 
         </div>
 
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
+            <img src="img/die1.png" alt="die">
             <p> Write an image to the page </p>
+            <script>
+                document.write("<img src=\"img/die1.png\" alt=\"die\">");
+            </script>
 
             <p> Write a table to the page </p>
+            
+            <script>
+                document.write("<table border=\"1\"> <tr> <td>1</td></tr></table>");
+            </script>
 
         </div>
 
@@ -55,7 +78,10 @@
             <h1>Window and Document Object </h1>
             <p> Try alert, open, location, url </p>
             <script>
-
+                document.write("The document is modified on " + document.lastModified);
+                //window.open("https://www.google.com"); not recommended
+                //window.location.assign("")
+                //window.alert("alert");
             </script>
 
         </div>
@@ -66,6 +92,7 @@
             <p>Result:
                 <script src="js/arith.js"></script>
             </p>
+            
 
         </div>
 
@@ -74,8 +101,17 @@
             <p id="p1"> Paragraph Number One </p>
             <p id="p2"> Paragraph Number two </p>
             <p id="p3"> Paragraph Number three </p>
-            <p>Please write JavaScript code to change the content of each paragraph.​
-            <p>
+            <p>Please write JavaScript code to change the content of each paragraph. </p>
+            <script>
+                const pE = document.querySelector('#p1');
+                pE.innerHTML = "<b> I changed</b>";
+                console.log(pE);
+                document.getElementById("p2").textContent = "<i> test </i>";
+                //document.getElementById('p3').textContent = 
+
+                
+
+            </script>
 
 
         </div>
@@ -85,6 +121,8 @@
             <p> Please enter your numbers </p>
             <script>
                 function calculate() {
+                    const fE = document.getElementsByName("addnum1")[0];
+                    console.log(fE);
 
 
                 }
