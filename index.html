@@ -122,8 +122,11 @@
             <script>
                 function calculate() {
                     const fE = document.getElementsByName("addnum1")[0];
-                    console.log(fE);
-
+                    var a = parseInt(fE.value);
+                    const sE = document.getElementsByName("num2");
+                    var b = parseInt(sE.value);
+                    var c = a + b;
+                    document.getElementById('result').innerHTML = "<b>" + c + "</b>";
 
                 }
             </script>
@@ -143,9 +146,23 @@
                     </label>
                 </p>
 
-                <p id="message">
+                <p id="welcome">
 
                 </p>
+                <script>
+                    //Event Handler
+                    function welcome(){
+                        //get the value of the name textbox
+                        var name = document.getElementById('cName').value;
+                        //put a welcome message
+                        document.getElementById('welcome').textContent = "Welcome";
+
+                    }
+                    //register the event
+                    const nameE = document.querySelector("#cName");
+                    nameE.addEventListener('blur',welcome,false);
+
+                </script>
 
                 <p>
                     <label> Email:
@@ -161,6 +178,16 @@
             Calculating Square:
             <input type="text" id="squarenum" placeholder="Type in a number"> <sup> 2 </sup> =
             <label id="squareresult"> ? </label>
+
+            <script>
+                function calculate(){
+                    var numtemp = document.getElementById('squarenum').value;
+                    var answer = parseInt(numtemp * numtemp);
+                    document.getElementById('squareresult').textContent = answer;
+                }
+
+                document.getElementById('squarenum').addEventListener('blur',calculate,false);
+            </script>
 
         </div>
 
