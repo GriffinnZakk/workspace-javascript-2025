@@ -280,6 +280,13 @@
             <p>
                 <input type="button" value="Click for Square">
             </p>
+            <script>
+                function getSquare(){
+                    //get n
+                    var N = parseInt(document.getElementById("inputnumber1").value);
+                    console.log("N = "+N+"type "+typeofN)
+                }
+            </script>
 
         </div>
 
@@ -343,6 +350,25 @@
                     <td id="r6"></td>
                 </tr>
             </table>
+            <script>
+                //Array Practice
+                const myarray = [1,2,3,4,5,6];
+                for (var i in myarray){
+                    console.log(myarray[i])
+                }
+                myarray.push(10);
+                myarray[100] = 100;
+                console.log(myarray);
+
+                //dice game
+                var stats = [0,0,0,0,0,0];
+                const rolldice = () => {
+                    var num = Math.floor(Math.random()*6 + 1);
+                    console.log(num);
+                }
+
+                document.getElementById('roll').addEventListener('click',rolldice,false);
+            </script>
 
         </div>
 
@@ -365,6 +391,18 @@
                 <img src="img/usca5.jpg" alt="usca">
             </div>
 			<script>
+                var index = 3;
+                var imagelist = document.querySelectorAll('.img-container-hide');
+                imagelist[3].setAttribute('class','img-container');
+                //Event Handler
+                function changepic(){
+                    imagelist[index].setAttribute('class',"img-container-hide");
+                    index++;
+                    imagelist[index].setAttribute('class',"img-container");
+                }
+                //Event
+                setInterval(changepic, 5000);
+
 				
 			</script>
 
