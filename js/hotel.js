@@ -16,6 +16,7 @@ var guest1 = {
     roomSize: "2",
     otherGuests: ["Josh"]
 }
+var guestgroup = new Array();
 
 function reservation(){
     var guest = {
@@ -24,8 +25,26 @@ function reservation(){
         roomtype: document.getElementById('room').value,
         numberOfGuests: document.getElementById('guestnum').value,
     };
+
     guestgroup.push(guest);
     console.log(guestgroup);
 }
 
-document. getElementById('submit').addEventListener('click', reservation);
+document.getElementById('submit').addEventListener('click', reservation);
+
+function showReservations(){
+
+    var message = "";
+    for (var i in guestgroup){
+        var guest = guestgroup[i];
+        message += " " + i + "." + guest.name + " " +guest.checkin + " " + guest.roomtype + " " + guest.numberOfGuests;
+
+
+    }
+    console.log(message);
+
+}
+
+document.getElementById('lists').addEventListener('click', showReservations);
+
+

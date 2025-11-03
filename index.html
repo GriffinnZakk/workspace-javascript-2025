@@ -397,7 +397,7 @@
                 //Event Handler
                 function changepic(){
                     imagelist[index].setAttribute('class',"img-container-hide");
-                    index++;
+                    index = (index + 1)%5;
                     imagelist[index].setAttribute('class',"img-container");
                 }
                 //Event
